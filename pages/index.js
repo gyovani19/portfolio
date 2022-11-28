@@ -22,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='bg-gray-200 px-10 md:px-20 lg:px-40'>
+      <main className='bg-gray-200 px-4 md:px-20 lg:px-40'>
         <section className='min-h-screen'>
         <nav className='py-10 mb-12 flex justify-between'>
           <h1 className='text-xl font-burtons'>ROOT</h1>
@@ -44,7 +44,7 @@ export default function Home() {
           <AiFillLinkedin/>
           <AiFillYoutube/>
         </div>
-        <div className='relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96'>
+        <div className='relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-80 md:w-80'>
           <Image src={deved} layout="fill" objectFit="cover"/>
         </div>
         </section>
