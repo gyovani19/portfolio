@@ -2,7 +2,7 @@ import Head from 'next/head';
 import {BsFillMoonStarsFill} from 'react-icons/bs';
 import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube} from 'react-icons/ai';
 import Image from 'next/image';
-import deved from '../public/dev-ed-wave.png';
+import deved from '../public/profile-pic2.png';
 import design from '../public/design.png';
 import code from '../public/code.png';
 import consulting from '../public/consulting.png';
@@ -12,7 +12,12 @@ import web4 from '../public/web4.png'
 import web6 from '../public/web6.png'
 import {useState} from "react";
 
+
+
 export default function Home() {
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   const [darkMode, setDarkMode] = useState(false);
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -45,46 +50,46 @@ export default function Home() {
           <AiFillYoutube/>
         </div>
         <div className='relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-80 md:w-80'>
-          <Image src={deved} layout="fill" objectFit="cover"/>
+          <Image src={deved}  objectFit="cover"/>
         </div>
         </section>
         
    <section>
     <div>
       <br />
-     <h3 className='text-center text-3xl py-1 max-w-xl  mx-auto'>Serviços que ofereço</h3>
-            <p className='text-center text-xl py-2 leading-8 text-gray-800 max-w-xl mx-auto'>Atualmente, possuo disponibilidade para trabalhar como <span className='text-teal-500'>freelancer</span> e se necessário de forma <span className='text-teal-500'>remota</span>, possuo conhecimento em gerenciamento de redes, desenvolvimento WEB e desenvolvimento de chatbots.</p>
+     <h3 className='text-center text-3xl py-1 max-w-xl  mx-auto'>Descrição Profissional</h3>
+            <p className='text-center text-xl py-2 leading-8 text-gray-800 max-w-3xl mx-auto'>Atualmente, possuo disponibilidade para trabalhar como <span className='text-teal-500'>freelancer</span> e se necessário de forma <span className='text-teal-500'>remota</span>, possuo conhecimento em gerenciamento de redes, desenvolvimento WEB e desenvolvimento de chatbots.</p>
             <p className=' text-center text-xl py-2 leading-8 text-gray-800 max-w-xl mx-auto'>Além disso, já desenvolvi pesquisas na área de <span className='text-teal-500'>Desenvolvimento Sustentável em TI</span> e atualmente na área de <span className='text-teal-500'>Big Data</span>.
               </p>
             </div>
             <div className='lg:flex gap-10'>
               <div className='text-center shadow-lg p-10 rounded-xl my-10'>
                 <Image src={design} width={100} height={100}/>
-                <h3 className='text-lg font-medium pt-8 pb-2'>Título de algum projeto</h3>
+                <h3 className='text-lg font-medium pt-8 pb-2'>Design Skills</h3>
                 <p className='py-2'>
-                  bla bla falar de algum projeto meu, bla bla, bla bla bla.
+                 Habilidades e tecnologias que uso no desenvolvimento WEB.
                 </p>
                 <h4 className='py-4 text-teal-600'>Tecnologias que Uso</h4>
-                <p className='text-gray-800 py-1'>React</p>
-                <p className='text-gray-800 py-1'>NextJS</p>
-                <p className='text-gray-800 py-1'>Tailwind</p>
+                <p className='text-gray-800 py-1'>Figma</p>
+                <p className='text-gray-800 py-1'>Photoshop</p>
+                <p className='text-gray-800 py-1'>CSS-3</p>
               </div>
               <div className='text-center shadow-lg p-10 rounded-xl my-10'>
                 <Image src={consulting} width={100} height={100}/>
-                <h3 className='text-lg font-medium pt-8 pb-2'>Título de algum projeto</h3>
+                <h3 className='text-lg font-medium pt-8 pb-2'>Colaboração e Versionamento</h3>
                 <p className='py-2'>
-                  bla bla falar de algum projeto meu, bla bla, bla bla bla.
+                  Habilidades e tecnologias que uso para colaboração como DEV.
                 </p>
                 <h4 className='py-4 text-teal-600'>Tecnologias que Uso</h4>
-                <p className='text-gray-800 py-1'>React</p>
-                <p className='text-gray-800 py-1'>NextJS</p>
-                <p className='text-gray-800 py-1'>Tailwind</p>
+                <p className='text-gray-800 py-1'>Git</p>
+                <p className='text-gray-800 py-1'>GitHub</p>
+                <p className='text-gray-800 py-1'>Vercel</p>
               </div>
               <div className='text-center shadow-lg p-10 rounded-xl my-10'>
                 <Image src={code} width={100} height={100}/>
-                <h3 className='text-lg font-medium pt-8 pb-2'>Título de algum projeto</h3>
+                <h3 className='text-lg font-medium pt-8 pb-2'>Frameworks</h3>
                 <p className='py-2'>
-                  bla bla falar de algum projeto meu, bla bla, bla bla bla.
+                 Frameworks e bibliotecas que possuo mais experiência.
                 </p>
                 <h4 className='py-4 text-teal-600'>Tecnologias que Uso</h4>
                 <p className='text-gray-800 py-1'>React</p>
@@ -95,24 +100,22 @@ export default function Home() {
          </section>
          <section>
           <div>
-            <h3 className='text-3xl py-1'>Portfolio</h3>
-            <p className='text-md py-2 leading-8 text-gray-800'>Atualmente, possuo disponibilidade para trabalhar como <span className='text-teal-500'>freelancer</span> e se necessário de forma <span className='text-teal-500'>remota</span>, possuo conhecimento em gerenciamento de redes, desenvolvimento WEB e desenvolvimento de chatbots.</p>
-            <p className='text-md py-2 leading-8 text-gray-800'>Além disso, já desenvolvi pesquisas na área de <span className='text-teal-500'>Desenvolvimento Sustentável em TI</span> e atualmente na área de <span className='text-teal-500'>Big Data</span>.
-              </p>
+            <h3 className='text-center text-3xl py-1 max-w-xl  mx-auto'>Projetos</h3>
+            <p className='text-center text-xl py-1 max-w-4xl  mx-auto text-gray-800'>Abaixo, seguem alguns exemplos de projetos que desenvolvi utilizando tecnologias de desenvolvimento <span className='text-teal-500'>WEB</span> com destaque para o <span className='text-teal-500'>React</span>, também possuo conhecimento intermediário sobre manipulação do DOM, paradigma funcional e outros frameworks relacionados a JavaScript.</p>
+            
           </div>
           <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
 
-          <div className='basis-1/3 flex-1'> 
-          <Image src={web1} className="rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive" /></div>
+          <div className='cursor-pointer basis-1/3 flex-1'><Image onClick={() => openInNewTab('https://gyovani19.github.io/dcomp-lite/')}  src={web1} className="rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive" /></div>
 
-          <div className='basis-1/3 flex-1'><Image src={web2} className="rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive" /></div>
+          <div className='cursor-pointer basis-1/3 flex-1'><Image onClick={() => openInNewTab('https://gyovani19.github.io/SIGM-FAPESE/')}  src={web2} className="rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive" /></div>
 
           
 
-          <div className='basis-1/3 flex-1'><Image src={web4} className="rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive" /></div>
+          <div className='cursor-pointer basis-1/3 flex-1'><Image onClick={() => openInNewTab('https://gyovani19.github.io/SIG-DCOMP/')} src={web6} className="rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive" /></div>
 
 
-          <div className='basis-1/3 flex-1'><Image src={web6} className="rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive" /></div>
+          <div className='cursor-pointer basis-1/3 flex-1'><Image onClick={() => openInNewTab('https://gyovani19.github.io/BDC/')} src={web4} className="rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive" /></div>
 
           </div>
          </section>
