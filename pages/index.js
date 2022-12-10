@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import {BsFillMoonStarsFill} from 'react-icons/bs';
-import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube} from 'react-icons/ai';
+import {AiFillGithub, AiFillLinkedin, AiFillGoogleCircle} from 'react-icons/ai';
 import Image from 'next/image';
 import deved from '../public/profile-pic2.png';
 import design from '../public/design.png';
@@ -11,8 +11,9 @@ import web2 from '../public/web2.png'
 import web4 from '../public/web4.png'
 import web6 from '../public/web6.png'
 import {useState} from "react";
+import { createContext } from 'react';
 
-
+export const ThemeContext = createContext(null);
 
 export default function Home() {
   const openInNewTab = url => {
@@ -27,27 +28,36 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='bg-gray-200 px-4 md:px-20 lg:px-40'>
+      <main className='bg-gray-200 px-4 md:px-20 lg:px-40 dark:bg-gray-900'>
         <section className='min-h-screen'>
         <nav className='py-10 mb-12 flex justify-between'>
-          <h1 className='text-xl font-burtons'>ROOT</h1>
+          <h1 className='text-xl font-burtons dark:text-white'>ROOT</h1>
           <ul className='flex items-center'>
             <li>
-            <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-2xl'/>
+            <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-2xl dark:text-white' />
             </li>
             <li><a className=' bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8' href='#'>Resume</a></li>
           </ul>
         </nav>
         <div className='text-center p-10'>
-          <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl'>Gyovani Santos</h2>
-            <h3 className='text-2xl py-2 md:text-3xl'>Desenvolvedor WEB</h3>
-              <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto'>Sou desenvolvedor WEB, técnico em Redes de Computadores e estou cursando Sistemas de Informações. Conheça abaixo alguns de meus projetos:
+          <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl dark:text-white'>Gyovani Santos</h2>
+            <h3 className='text-2xl py-2 md:text-3xl dark:text-teal-600'>Desenvolvedor WEB</h3>
+              <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white'>Sou desenvolvedor WEB, técnico em Redes de Computadores e estou cursando Sistemas de Informações. Conheça abaixo alguns de meus projetos:
               </p>
         </div>
+
         <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600'>
-          <AiFillTwitterCircle/>
-          <AiFillLinkedin/>
-          <AiFillYoutube/>
+         <div className='cursor-pointer'><AiFillGithub onClick={() => openInNewTab('https://github.com/gyovani19')} />
+         </div> 
+
+         <div className='cursor-pointer'>
+          <AiFillLinkedin onClick={() => openInNewTab('www.linkedin.com/in/gyovani-yuri-s')}/>
+          </div>
+
+          <div className='cursor-pointer'>
+            <AiFillGoogleCircle onClick={() => openInNewTab('mailto:gyovani.santos@dcomp.ufs.br')} />
+          </div>
+          
         </div>
         <div className='relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-80 md:w-80'>
           <Image src={deved}  objectFit="cover"/>
@@ -57,51 +67,51 @@ export default function Home() {
    <section>
     <div>
       <br />
-     <h3 className='text-center text-3xl py-1 max-w-xl  mx-auto'>Descrição Profissional</h3>
-            <p className='text-center text-xl py-2 leading-8 text-gray-800 max-w-3xl mx-auto'>Atualmente, possuo disponibilidade para trabalhar como <span className='text-teal-500'>freelancer</span> e se necessário de forma <span className='text-teal-500'>remota</span>, possuo conhecimento em gerenciamento de redes, desenvolvimento WEB e desenvolvimento de chatbots.</p>
-            <p className=' text-center text-xl py-2 leading-8 text-gray-800 max-w-xl mx-auto'>Além disso, já desenvolvi pesquisas na área de <span className='text-teal-500'>Desenvolvimento Sustentável em TI</span> e atualmente na área de <span className='text-teal-500'>Big Data</span>.
+     <h3 className='text-center text-3xl py-1 max-w-xl  mx-auto dark:text-white'>Descrição Profissional</h3>
+            <p className='text-center text-xl py-2 leading-8 text-gray-800 max-w-3xl mx-auto dark:text-white'>Atualmente, possuo disponibilidade para trabalhar como <span className='text-teal-500'>freelancer</span> e se necessário de forma <span className='text-teal-500'>remota</span>, possuo conhecimento em gerenciamento de redes, desenvolvimento WEB e desenvolvimento de chatbots.</p>
+            <p className=' text-center text-xl py-2 leading-8 text-gray-800 max-w-xl mx-auto dark:text-white'>Além disso, já desenvolvi pesquisas na área de <span className='text-teal-500'>Desenvolvimento Sustentável em TI</span> e atualmente na área de <span className='text-teal-500'>Big Data</span>.
               </p>
             </div>
             <div className='lg:flex gap-10'>
               <div className='text-center shadow-lg p-10 rounded-xl my-10'>
                 <Image src={design} width={100} height={100}/>
-                <h3 className='text-lg font-medium pt-8 pb-2'>Design Skills</h3>
-                <p className='py-2'>
+                <h3 className='text-lg font-medium pt-8 pb-2 dark:text-white'>Design Skills</h3>
+                <p className='py-2 dark:text-white'>
                  Habilidades e tecnologias que uso no desenvolvimento WEB.
                 </p>
-                <h4 className='py-4 text-teal-600'>Tecnologias que Uso</h4>
-                <p className='text-gray-800 py-1'>Figma</p>
-                <p className='text-gray-800 py-1'>Photoshop</p>
-                <p className='text-gray-800 py-1'>CSS-3</p>
+                <h4 className='py-4 text-teal-600 '>Tecnologias que Uso</h4>
+                <p className='text-gray-800 py-1 dark:text-white'>Figma</p>
+                <p className='text-gray-800 py-1 dark:text-white'>Photoshop</p>
+                <p className='text-gray-800 py-1 dark:text-white'>CSS-3</p>
               </div>
               <div className='text-center shadow-lg p-10 rounded-xl my-10'>
                 <Image src={consulting} width={100} height={100}/>
-                <h3 className='text-lg font-medium pt-8 pb-2'>Colaboração e Versionamento</h3>
-                <p className='py-2'>
+                <h3 className='text-lg font-medium pt-8 pb-2 dark:text-white'>Colaboração e Versionamento</h3>
+                <p className='py-2 dark:text-white'>
                   Habilidades e tecnologias que uso para colaboração como DEV.
                 </p>
                 <h4 className='py-4 text-teal-600'>Tecnologias que Uso</h4>
-                <p className='text-gray-800 py-1'>Git</p>
-                <p className='text-gray-800 py-1'>GitHub</p>
-                <p className='text-gray-800 py-1'>Vercel</p>
+                <p className='text-gray-800 py-1 dark:text-white'>Git</p>
+                <p className='text-gray-800 py-1 dark:text-white'>GitHub</p>
+                <p className='text-gray-800 py-1 dark:text-white'>Vercel</p>
               </div>
               <div className='text-center shadow-lg p-10 rounded-xl my-10'>
                 <Image src={code} width={100} height={100}/>
-                <h3 className='text-lg font-medium pt-8 pb-2'>Frameworks</h3>
-                <p className='py-2'>
+                <h3 className='text-lg font-medium pt-8 pb-2 dark:text-white'>Frameworks</h3>
+                <p className='py-2 dark:text-white'>
                  Frameworks e bibliotecas que possuo mais experiência.
                 </p>
                 <h4 className='py-4 text-teal-600'>Tecnologias que Uso</h4>
-                <p className='text-gray-800 py-1'>React</p>
-                <p className='text-gray-800 py-1'>NextJS</p>
-                <p className='text-gray-800 py-1'>Tailwind</p>
+                <p className='text-gray-800 py-1 dark:text-white'>React</p>
+                <p className='text-gray-800 py-1 dark:text-white'>NextJS</p>
+                <p className='text-gray-800 py-1 dark:text-white'>Tailwind</p>
               </div>
             </div>
          </section>
          <section>
           <div>
-            <h3 className='text-center text-3xl py-1 max-w-xl  mx-auto'>Projetos</h3>
-            <p className='text-center text-xl py-1 max-w-4xl  mx-auto text-gray-800'>Abaixo, seguem alguns exemplos de projetos que desenvolvi utilizando tecnologias de desenvolvimento <span className='text-teal-500'>WEB</span> com destaque para o <span className='text-teal-500'>React</span>, também possuo conhecimento intermediário sobre manipulação do DOM, paradigma funcional e outros frameworks relacionados a JavaScript.</p>
+            <h3 className='text-center text-3xl py-1 max-w-xl  mx-auto dark:text-white'>Projetos</h3>
+            <p className='text-center text-xl py-1 max-w-4xl  mx-auto text-gray-800 dark:text-white'>Abaixo, seguem alguns exemplos de projetos que desenvolvi utilizando tecnologias de desenvolvimento <span className='text-teal-500'>WEB</span> com destaque para o <span className='text-teal-500'>React</span>, também possuo conhecimento intermediário sobre manipulação do DOM, paradigma funcional e outros frameworks relacionados a JavaScript.</p>
             
           </div>
           <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
